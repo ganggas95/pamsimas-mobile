@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "395765007699",
+    "project_id": "akses-pamsimas",
+    "storage_bucket": "akses-pamsimas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:395765007699:android:8dc89b27ad859371df4da6",
+        "android_client_info": {
+          "package_name": "com.ganggas.pamsimas.akses_pamsimas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "395765007699-d28rfqtq1sla8bhknsesga315ukjiaue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDROduSctjfIzf0NGiELpQzlzw4d4MRt3o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "395765007699-d28rfqtq1sla8bhknsesga315ukjiaue.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "395765007699-j58m01lkp9jhb3qkfimkvjqo634qsjvr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ganggas.pamsimas.aksesPamsimas"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:395765007699:android:3efb964ce9a4d33adf4da6",
+        "android_client_info": {
+          "package_name": "com.pamsimas.pamsimas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "395765007699-d28rfqtq1sla8bhknsesga315ukjiaue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDROduSctjfIzf0NGiELpQzlzw4d4MRt3o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "395765007699-d28rfqtq1sla8bhknsesga315ukjiaue.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "395765007699-j58m01lkp9jhb3qkfimkvjqo634qsjvr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ganggas.pamsimas.aksesPamsimas"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
