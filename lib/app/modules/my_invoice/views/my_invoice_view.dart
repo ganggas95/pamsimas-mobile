@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/member_controller.dart';
+import '../controllers/my_invoice_controller.dart';
 
-class MemberView extends GetView<MemberController> {
-  const MemberView({Key? key}) : super(key: key);
+class MyInvoiceView extends GetView<MyInvoiceController> {
+  const MyInvoiceView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Data Pelanggan'),
+        title: const Text('MyInvoiceView'),
       ),
-      body: Center(
+      body: const Center(
         child: Text(
-          'MemberView is working',
+          'MyInvoiceView is working',
           style: TextStyle(fontSize: 20),
         ),
       ),

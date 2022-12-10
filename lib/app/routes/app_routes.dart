@@ -11,6 +11,10 @@ abstract class Routes {
   static const CREATE_INVOICE = _Paths.CREATE_INVOICE;
   static const REPORT = _Paths.REPORT;
   static const DASHBOARD = _Paths.DASHBOARD;
+  static const MY_INVOICE = _Paths.MY_INVOICE;
+  static const ADD_MEMBER = _Paths.MEMBER + _Paths.ADD_MEMBER;
+  static const WORKER = _Paths.WORKER;
+  static const ADD_WORKER = _Paths.WORKER + _Paths.ADD_WORKER;
 }
 
 abstract class _Paths {
@@ -23,4 +27,8 @@ abstract class _Paths {
   static const CREATE_INVOICE = '/create-invoice';
   static const REPORT = '/report';
   static const DASHBOARD = '/dashboard';
+  static const MY_INVOICE = '/my-invoice';
+  static const ADD_MEMBER = '/add-member';
+  static const WORKER = '/worker';
+  static const ADD_WORKER = '/add-worker';
 }

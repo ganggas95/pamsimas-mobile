@@ -20,10 +20,10 @@ class MyApp extends StatelessWidget {
   final Future<FirebaseApp> _firebase =
       Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   final authController = Get.put(AuthController(), permanent: true);
-
   MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+
     return FutureBuilder(
         future: _firebase,
         builder: (context, snapshot) {
@@ -36,13 +36,17 @@ class MyApp extends StatelessWidget {
               theme: ThemeData(
                 brightness: Brightness.light,
                 fontFamily: "Mukta",
-                primaryColor: Colors.green,
+                primaryColor: const Color(0xFF00aa59),
+                appBarTheme: const AppBarTheme(
+                  backgroundColor: Color(0xFF00aa59),
+                  centerTitle: false,
+                ),
                 bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-                  backgroundColor: Colors.green,
+                  backgroundColor: Color(0xFF00aa59),
                   selectedItemColor: Colors.black
                 )
               ),
-              initialRoute: Routes.HOME,
+              initialRoute: Routes.DASHBOARD,
               getPages: AppPages.routes,
             );
             // return FutureBuilder(

@@ -1,23 +1,18 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class DashboardController extends GetxController {
   //TODO: Implement DashboardController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  Route? generateRoute(){
+    if(currentIndex == 0) {
+      return GetPageRoute(
+        binding: HomeBin
+      )
+    }
+    return null;
   }
-
-  @override
-  void onReady() {
-    super.onReady();
+  var currentIndex = 0.obs;
+  void changePage(int index) {
+    currentIndex.value = index;
   }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

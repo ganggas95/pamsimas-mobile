@@ -2,22 +2,47 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
 import '../controllers/dashboard_controller.dart';
 
 class DashboardView extends GetView<DashboardController> {
-  const DashboardView({Key? key}) : super(key: key);
+  DashboardView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('DashboardView'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(
-          'DashboardView is working',
-          style: TextStyle(fontSize: 20),
-        ),
+    return Obx(
+      () => Scaffold(
+        body: SafeArea(
+            child: Navigator(key: Get.key, initialRoute: Routes.HOME, onGenerateRoute: c,)),
+        bottomNavigationBar: BottomNavigationBar(
+            onTap: c.changePage,
+            currentIndex: c.currentIndex.value,
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: "",
+                backgroundColor: Color(0xff00aa59),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.bar_chart),
+                label: "",
+                backgroundColor: Color(0xff00aa59),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.electric_meter),
+                label: "",
+                backgroundColor: Color(0xff00aa59),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.groups),
+                label: "",
+                backgroundColor: Color(0xff00aa59),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: "",
+                backgroundColor: Color(0xff00aa59),
+              ),
+            ]),
       ),
     );
   }

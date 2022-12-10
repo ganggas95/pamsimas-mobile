@@ -11,7 +11,6 @@ class ProfileView extends GetView<ProfileController> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('ProfileView'),
-        centerTitle: true,
       ),
       body: Center(
         child: Text(
