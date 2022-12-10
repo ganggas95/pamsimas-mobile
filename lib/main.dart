@@ -33,14 +33,18 @@ class MyApp extends StatelessWidget {
           if (snapshot.connectionState == ConnectionState.done) {
             return GetMaterialApp(
               title: "Application",
-              initialRoute: Routes.LOGIN,
+              theme: ThemeData(
+                primaryColor: const Color(0x0000aa95),
+              ),
+              initialRoute: Routes.HOME,
               getPages: AppPages.routes,
             );
             // return FutureBuilder(
             //     future: Future.delayed(const Duration(seconds: 5)),
             //     builder: (context, snapshot) {
             //       if (snapshot.connectionState == ConnectionState.done) {
-            //         return Obx(() => GetMaterialApp(
+            //         return Obx(
+            //           () => GetMaterialApp(
             //             title: "Application",
             //             initialRoute: authController.isSkipIntro.isTrue
             //                 ? authController.isAuth.isTrue

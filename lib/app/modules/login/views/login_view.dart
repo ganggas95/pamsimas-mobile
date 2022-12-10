@@ -16,28 +16,19 @@ class LoginView extends GetView<LoginController> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: Get.width * 0.6,
-                height: Get.width * 0.7,
+                width: Get.width * 0.8,
+                height: Get.width * 0.8,
                 child: Lottie.asset("assets/lottie/login.json"),
               ),
               const SizedBox(
                 height: 15,
-              ),
-              const Text(
-                "AKSES PAMSIMAS",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: "Mukta",
-                  fontWeight: FontWeight.w600,
-                  fontSize: 24.0,
-                ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: Column(
                   children: [
                     const SizedBox(
-                      height: 24,
+                      height: 15,
                     ),
                     const Text(
                       "Masukkan informasi berikut untuk melanjutkan",
