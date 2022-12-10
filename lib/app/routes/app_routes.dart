@@ -8,6 +8,9 @@ abstract class Routes {
   static const MEMBER = _Paths.MEMBER;
   static const PROFILE = _Paths.PROFILE;
   static const INTRODUCTION = _Paths.INTRODUCTION;
+  static const CREATE_INVOICE = _Paths.CREATE_INVOICE;
+  static const REPORT = _Paths.REPORT;
+  static const DASHBOARD = _Paths.DASHBOARD;
 }
 
 abstract class _Paths {
@@ -17,4 +20,7 @@ abstract class _Paths {
   static const MEMBER = '/member';
   static const PROFILE = '/profile';
   static const INTRODUCTION = '/introduction';
+  static const CREATE_INVOICE = '/create-invoice';
+  static const REPORT = '/report';
+  static const DASHBOARD = '/dashboard';
 }

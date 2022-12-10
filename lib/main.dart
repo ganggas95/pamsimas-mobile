@@ -34,7 +34,13 @@ class MyApp extends StatelessWidget {
             return GetMaterialApp(
               title: "Application",
               theme: ThemeData(
-                primaryColor: const Color(0x0000aa95),
+                brightness: Brightness.light,
+                fontFamily: "Mukta",
+                primaryColor: Colors.green,
+                bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+                  backgroundColor: Colors.green,
+                  selectedItemColor: Colors.black
+                )
               ),
               initialRoute: Routes.HOME,
               getPages: AppPages.routes,
