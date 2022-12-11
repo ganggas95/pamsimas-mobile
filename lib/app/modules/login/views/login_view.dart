@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:pamsimas/app/routes/app_pages.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
@@ -58,7 +59,7 @@ class LoginView extends GetView<LoginController> {
                       height: 20,
                     ),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () => Get.toNamed(Routes.DASHBOARD),
                       style: ElevatedButton.styleFrom(
                           minimumSize: Size(Get.width, 48)),
                       child: const Text("Login"),

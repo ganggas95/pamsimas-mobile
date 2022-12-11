@@ -10,7 +10,8 @@ class CreateInvoiceView extends GetView<CreateInvoiceController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('CreateInvoiceView'),
+        title: const Text('Buat Tagihan'),
+        centerTitle: false,
       ),
       body: Center(
         child: Text(

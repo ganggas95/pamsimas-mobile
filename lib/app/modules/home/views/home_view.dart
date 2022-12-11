@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:pamsimas/app/routes/app_pages.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
-  final HomeController _controller = Get.put(HomeController());
-  HomeView({Key? key}) : super(key: key);
+  const HomeView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +26,7 @@ class HomeView extends GetView<HomeController> {
             const SizedBox(
               height: 20,
             ),
-            MenuWidget(controller: _controller,),
+            MenuWidget(),
           ],
         )),
       ),
@@ -169,8 +169,8 @@ class YourStatisticWidget extends StatelessWidget {
 }
 
 class MenuWidget extends StatelessWidget {
-  late HomeController controller;
-  MenuWidget({Key? key, required controller}) : super(key: key);
+  final HomeController _controller = Get.put(HomeController());
+  MenuWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -194,79 +194,52 @@ class MenuWidget extends StatelessWidget {
             mainAxisSpacing: 20,
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 0.0),
             children: [
-              GestureDetector(
-                onTap: () => controller.goToAddNew(),
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      width: Get.width * 0.7 / 3,
-                      height: Get.width * 0.7 / 3,
-                      decoration: BoxDecoration(
-                          color: Theme.of(context).primaryColor,
-                          borderRadius:
-                          const BorderRadius.all(Radius.circular(24.0))),
-                      child:
-                      const Icon(Icons.water, color: Colors.white, size: 36),
-                    ),
-                    const Text("Pasang Baru",
-                        style:
-                        TextStyle(fontSize: 14, fontWeight: FontWeight.w400))
-                  ],
-                ),
-              ),
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: Get.width * 0.7 / 3,
-                    height: Get.width * 0.7 / 3,
-                    decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor,
-                        borderRadius:
-                        const BorderRadius.all(Radius.circular(24.0))),
-                    child:
-                    const Icon(Icons.group_add, color: Colors.white, size: 36),
-                  ),
-                  const Text("Petugas Baru",
-                      style:
-                      TextStyle(fontSize: 14, fontWeight: FontWeight.w400))
-                ],
-              ),
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: Get.width * 0.7 / 3,
-                    height: Get.width * 0.7 / 3,
-                    decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor,
-                        borderRadius:
-                        const BorderRadius.all(Radius.circular(24.0))),
-                    child:
-                    const Icon(Icons.sd_card_alert, color: Colors.white, size: 36),
-                  ),
-                  const Text("Data Pengaduan",
-                      style:
-                      TextStyle(fontSize: 14, fontWeight: FontWeight.w400))
-                ],
-              ),
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: Get.width * 0.7 / 3,
-                    height: Get.width * 0.7 / 3,
-                    decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor,
-                        borderRadius:
-                        const BorderRadius.all(Radius.circular(24.0))),
-                    child:
-                    const Icon(Icons.tune_outlined, color: Colors.white, size: 36),
-                  ),
-                  const Text("Inventory",
-                      style:
-                      TextStyle(fontSize: 14, fontWeight: FontWeight.w400))
-                ],
-              )
+              _buildMenuItem(
+                  context: context,
+                  icon: Icons.water,
+                  onTap: () => Get.toNamed(Routes.ADD_MEMBER),
+                  label: "Pasang Baru"),
+              _buildMenuItem(
+                  context: context,
+                  icon: Icons.group_add,
+                  onTap: () => Get.toNamed(Routes.ADD_WORKER),
+                  label: "Petugas Baru"),
+              _buildMenuItem(
+                  context: context,
+                  icon: Icons.sd_card_alert,
+                  onTap: () => Get.toNamed(Routes.COMPLAINT),
+                  label: "Data Pengaduan"),
+              _buildMenuItem(
+                  context: context,
+                  icon: Icons.tune_outlined,
+                  onTap: () => Get.toNamed(Routes.INVENTORY),
+                  label: "Inventory"),
             ],
           )
+        ],
+      ),
+    );
+  }
+
+  Widget _buildMenuItem(
+      {required BuildContext context,
+      required IconData icon,
+      required Function onTap,
+      required String label}) {
+    return GestureDetector(
+      onTap: () => onTap(),
+      child: Column(
+        children: <Widget>[
+          Container(
+            width: Get.width * 0.7 / 3,
+            height: Get.width * 0.7 / 3,
+            decoration: BoxDecoration(
+                color: Theme.of(context).primaryColor,
+                borderRadius: const BorderRadius.all(Radius.circular(24.0))),
+            child: Icon(icon, color: Colors.white, size: 36),
+          ),
+          Text(label,
+              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w400))
         ],
       ),
     );

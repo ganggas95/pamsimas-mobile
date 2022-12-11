@@ -23,7 +23,6 @@ class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-
     return FutureBuilder(
         future: _firebase,
         builder: (context, snapshot) {
@@ -33,19 +32,7 @@ class MyApp extends StatelessWidget {
           if (snapshot.connectionState == ConnectionState.done) {
             return GetMaterialApp(
               title: "Application",
-              theme: ThemeData(
-                brightness: Brightness.light,
-                fontFamily: "Mukta",
-                primaryColor: const Color(0xFF00aa59),
-                appBarTheme: const AppBarTheme(
-                  backgroundColor: Color(0xFF00aa59),
-                  centerTitle: false,
-                ),
-                bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-                  backgroundColor: Color(0xFF00aa59),
-                  selectedItemColor: Colors.black
-                )
-              ),
+              theme: _buildTheme(),
               initialRoute: Routes.DASHBOARD,
               getPages: AppPages.routes,
             );
@@ -56,9 +43,10 @@ class MyApp extends StatelessWidget {
             //         return Obx(
             //           () => GetMaterialApp(
             //             title: "Application",
+            //             theme: _buildTheme(),
             //             initialRoute: authController.isSkipIntro.isTrue
             //                 ? authController.isAuth.isTrue
-            //                     ? Routes.HOME
+            //                     ? Routes.DASHBOARD
             //                     : Routes.LOGIN
             //                 : Routes.INTRODUCTION,
             //             getPages: AppPages.routes,
@@ -70,5 +58,22 @@ class MyApp extends StatelessWidget {
           }
           return const LoadingScreen();
         });
+  }
+
+  ThemeData _buildTheme() {
+    return ThemeData(
+        brightness: Brightness.light,
+        fontFamily: "Mukta",
+        primaryColor: Colors.lightBlueAccent,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.lightBlueAccent,
+          centerTitle: false,
+        ),
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Colors.lightBlueAccent,
+        ),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+            backgroundColor: Colors.lightBlueAccent,
+            selectedItemColor: Colors.black));
   }
 }

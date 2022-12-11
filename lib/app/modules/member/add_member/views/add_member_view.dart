@@ -11,9 +11,9 @@ class AddMemberView extends GetView<AddMemberController> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('AddMemberView'),
-        centerTitle: true,
+        centerTitle: false,
       ),
-      body: Center(
+      body: const Center(
         child: Text(
           'AddMemberView is working',
           style: TextStyle(fontSize: 20),

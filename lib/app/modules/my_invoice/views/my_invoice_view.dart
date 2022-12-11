@@ -11,6 +11,7 @@ class MyInvoiceView extends GetView<MyInvoiceController> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('MyInvoiceView'),
+        centerTitle: false,
       ),
       body: const Center(
         child: Text(
