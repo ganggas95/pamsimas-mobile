@@ -7,7 +7,6 @@ import 'package:pamsimas/app/modules/member/views/member_view.dart';
 import 'package:pamsimas/app/modules/profile/views/profile_view.dart';
 import 'package:pamsimas/app/modules/report/views/report_view.dart';
 
-import '../../../routes/app_pages.dart';
 import '../controllers/dashboard_controller.dart';
 
 class DashboardView extends GetView<DashboardController> {
@@ -45,7 +44,7 @@ class DashboardView extends GetView<DashboardController> {
               ),
               _bottomNavigationBarItem(
                 icon: const Icon(Icons.electric_meter),
-                label: "Buat Tagihan",
+                label: "Meter",
               ),
               _bottomNavigationBarItem(
                   icon: const Icon(Icons.groups), label: "Pelanggan"),

@@ -26,7 +26,7 @@ class HomeView extends GetView<HomeController> {
             const SizedBox(
               height: 20,
             ),
-            MenuWidget(),
+            const MenuWidget(),
           ],
         )),
       ),
@@ -169,8 +169,7 @@ class YourStatisticWidget extends StatelessWidget {
 }
 
 class MenuWidget extends StatelessWidget {
-  final HomeController _controller = Get.put(HomeController());
-  MenuWidget({Key? key}) : super(key: key);
+  const MenuWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -231,8 +230,8 @@ class MenuWidget extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Container(
-            width: Get.width * 0.7 / 3,
-            height: Get.width * 0.7 / 3,
+            width: Get.width * 0.6 / 3,
+            height: Get.width * 0.6 / 3,
             decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
                 borderRadius: const BorderRadius.all(Radius.circular(24.0))),

@@ -18,6 +18,7 @@ abstract class Routes {
   static const ADD_WORKER = _Paths.ADD_WORKER;
   static const COMPLAINT = _Paths.COMPLAINT;
   static const INVENTORY = _Paths.INVENTORY;
+  static const INVOICE_HISTORY = _Paths.INVOICE_HISTORY;
 }
 
 abstract class _Paths {
@@ -37,4 +38,5 @@ abstract class _Paths {
   static const COMPLAINT = '/complaint';
   static const INVENTORY = '/inventory';
   static const DETAIL_MEMBER = '/detail-member';
+  static const INVOICE_HISTORY = '/invoice-history';
 }

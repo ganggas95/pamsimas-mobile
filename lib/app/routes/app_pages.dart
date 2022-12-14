@@ -8,6 +8,8 @@ import '../modules/introduction/bindings/introduction_binding.dart';
 import '../modules/introduction/views/introduction_view.dart';
 import '../modules/inventory/bindings/inventory_binding.dart';
 import '../modules/inventory/views/inventory_view.dart';
+import '../modules/invoice_history/bindings/invoice_history_binding.dart';
+import '../modules/invoice_history/views/invoice_history_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/member/add_member/bindings/add_member_binding.dart';
@@ -106,6 +108,11 @@ class AppPages {
       name: _Paths.DETAIL_MEMBER,
       page: () => const DetailMemberView(),
       binding: DetailMemberBinding(),
+    ),
+    GetPage(
+      name: _Paths.INVOICE_HISTORY,
+      page: () => const InvoiceHistoryView(),
+      binding: InvoiceHistoryBinding(),
     ),
   ];
 }
