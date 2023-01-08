@@ -19,6 +19,7 @@ abstract class Routes {
   static const COMPLAINT = _Paths.COMPLAINT;
   static const INVENTORY = _Paths.INVENTORY;
   static const INVOICE_HISTORY = _Paths.INVOICE_HISTORY;
+  static const SIGN_UP = _Paths.SIGN_UP;
 }
 
 abstract class _Paths {
@@ -39,4 +40,5 @@ abstract class _Paths {
   static const INVENTORY = '/inventory';
   static const DETAIL_MEMBER = '/detail-member';
   static const INVOICE_HISTORY = '/invoice-history';
+  static const SIGN_UP = '/sign-up';
 }

@@ -18,10 +18,10 @@ class DashboardView extends GetView<DashboardController> {
         body: SafeArea(
           child: IndexedStack(
             index: controller.currentIndex.value,
-            children: const [
-              HomeView(),
-              ReportView(),
-              CreateInvoiceView(),
+            children: [
+              const HomeView(),
+              const ReportView(),
+              const CreateInvoiceView(),
               MemberView(),
               ProfileView(),
             ],

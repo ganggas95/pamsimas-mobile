@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:pamsimas/app/routes/app_pages.dart';
 import 'package:pamsimas/app/widgets/input_widget.dart';
-import '../controllers/login_controller.dart';
+import '../controllers/sign_up_controller.dart';
 
-class LoginView extends GetView<LoginController> {
-  const LoginView({Key? key}) : super(key: key);
+class SignUpView extends GetView<SignUpController> {
+  const SignUpView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,24 +62,24 @@ class LoginView extends GetView<LoginController> {
                       height: 20,
                     ),
                     ElevatedButton(
-                      onPressed: controller.handleSignIn,
+                      onPressed: controller.handleSignUp,
                       style: ElevatedButton.styleFrom(
                           minimumSize: Size(Get.width, 48)),
-                      child: const Text("Login"),
+                      child: const Text("Daftar"),
                     ),
                     const SizedBox(
                       height: 20,
                     ),
                     const Text("Atau"),
-                    const Text("Anda belum punya akun?"),
+                    const Text("Anda sudah punya akun?"),
                     const SizedBox(
                       height: 20,
                     ),
                     ElevatedButton(
-                      onPressed: controller.goToSignUp,
+                      onPressed: controller.goToSignIn,
                       style: ElevatedButton.styleFrom(
                           minimumSize: Size(Get.width, 48)),
-                      child: const Text("Daftar"),
+                      child: const Text("Login"),
                     ),
                   ],
                 ),

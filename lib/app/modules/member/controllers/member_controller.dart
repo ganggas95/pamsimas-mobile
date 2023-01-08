@@ -1,23 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
+import 'package:pamsimas/app/modules/member/model/member_model.dart';
 
 class MemberController extends GetxController {
-  //TODO: Implement MemberController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
+  Stream<List<Member>> get streamMembers => FirebaseFirestore.instance
+      .collection("members")
+      .snapshots()
+      .map((snapshot) => snapshot.docs
+          .map((doc) => Member.fromJson(doc.data()))
+          .toList());
 }

@@ -13,12 +13,23 @@ class CreateInvoiceView extends GetView<CreateInvoiceController> {
         title: const Text('Buat Tagihan'),
         centerTitle: false,
       ),
-      body: Center(
-        child: Text(
-          'CreateInvoiceView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+      body: SingleChildScrollView(
+          child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: Column(children: [
+          Container(
+              width: Get.width,
+              height: 45,
+              child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Theme.of(context).primaryColor),
+                  child: const Text("Pilih pelanggan"))),
+          const SizedBox(
+            height: 10,
+          )
+        ]),
+      )),
     );
   }
 }

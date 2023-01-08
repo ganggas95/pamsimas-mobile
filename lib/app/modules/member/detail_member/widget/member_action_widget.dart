@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 
 class MemberActionWidget extends StatelessWidget {
@@ -11,8 +10,7 @@ class MemberActionWidget extends StatelessWidget {
       width: Get.width * 0.9,
       height: 48,
       margin: const EdgeInsets.only(bottom: 20),
-      child: Expanded(
-        child: Row(
+      child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -56,7 +54,6 @@ class MemberActionWidget extends StatelessWidget {
                 backgroundColor: Theme.of(context).errorColor),
           ],
         ),
-      ),
     );
   }
 
@@ -65,13 +62,16 @@ class MemberActionWidget extends StatelessWidget {
       required Color backgroundColor,
       Color textColor = Colors.white,
       Function()? onPress}) {
-    return Container(
-      width: (Get.width * 0.85) / 3,
-      decoration: BoxDecoration(
-          color: backgroundColor, borderRadius: BorderRadius.circular(10)),
-      child: MaterialButton(
-        onPressed: onPress,
-        child: Text(label, style: TextStyle(color: textColor)),
+    return Flexible(
+      flex: 1,
+      child: Container(
+        width: (Get.width * 0.85) / 3,
+        decoration: BoxDecoration(
+            color: backgroundColor, borderRadius: BorderRadius.circular(10)),
+        child: MaterialButton(
+          onPressed: onPress,
+          child: Text(label, style: TextStyle(color: textColor)),
+        ),
       ),
     );
   }

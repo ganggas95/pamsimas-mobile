@@ -1,4 +1,7 @@
 import 'package:get/get.dart';
+import 'package:pamsimas/app/middleware/guest_middleware.dart';
+// import 'package:pamsimas/app/middleware/auth_middleware.dart';
+// import 'package:pamsimas/app/middleware/guest_middleware.dart';
 
 import '../modules/complaint/bindings/complaint_binding.dart';
 import '../modules/complaint/views/complaint_view.dart';
@@ -18,8 +21,8 @@ import '../modules/member/detail_member/bindings/detail_member_binding.dart';
 import '../modules/member/detail_member/views/detail_member_view.dart';
 import '../modules/my_invoice/bindings/my_invoice_binding.dart';
 import '../modules/my_invoice/views/my_invoice_view.dart';
-import '../modules/profile/bindings/profile_binding.dart';
-import '../modules/profile/views/profile_view.dart';
+import '../modules/sign-up/bindings/sign_up_binding.dart';
+import '../modules/sign-up/views/sign_up_view.dart';
 import '../modules/worker/add_worker/bindings/add_worker_binding.dart';
 import '../modules/worker/add_worker/views/add_worker_view.dart';
 
@@ -29,43 +32,41 @@ class AppPages {
   AppPages._();
 
   static final routes = [
-    // GetPage(
-    //   name: _Paths.HOME,
-    //   page: () => HomeView(),
-    //   binding: HomeBinding(),
-    // ),
     GetPage(
       name: _Paths.LOGIN,
       page: () => const LoginView(),
       binding: LoginBinding(),
+      middlewares: [],
     ),
     GetPage(
-      name: _Paths.DASHBOARD,
-      page: () => const DashboardView(),
-      binding: DashboardBinding(),
-    ),
-    // GetPage(
-    //     name: _Paths.MEMBER,
-    //     page: () => const MemberView(),
-    //     binding: MemberBinding(),
-    //     children: [
-
-    //     ]),
+        name: _Paths.SIGN_UP,
+        page: () => const SignUpView(),
+        binding: SignUpBinding(),
+        middlewares: []),
     GetPage(
-      name: _Paths.ADD_MEMBER,
-      page: () => const AddMemberView(),
-      binding: AddMemberBinding(),
-    ),
+        name: _Paths.INTRODUCTION,
+        page: () => const IntroductionView(),
+        binding: IntroductionBinding(),
+        middlewares: []),
+    GetPage(
+        name: _Paths.DASHBOARD,
+        page: () => const DashboardView(),
+        binding: DashboardBinding(),
+        middlewares: [
+          // AuthenticatedGuard(),
+        ]),
+    GetPage(
+        name: _Paths.ADD_MEMBER,
+        page: () => const AddMemberView(),
+        binding: AddMemberBinding(),
+        middlewares: [
+          // AuthenticatedGuard(),
+        ]),
     // GetPage(
     //   name: _Paths.PROFILE,
     //   page: () => const ProfileView(),
     //   binding: ProfileBinding(),
     // ),
-    GetPage(
-      name: _Paths.INTRODUCTION,
-      page: () => const IntroductionView(),
-      binding: IntroductionBinding(),
-    ),
     // GetPage(
     //   name: _Paths.CREATE_INVOICE,
     //   page: () => const CreateInvoiceView(),
@@ -77,10 +78,12 @@ class AppPages {
     //   binding: ReportBinding(),
     // ),
     GetPage(
-      name: _Paths.MY_INVOICE,
-      page: () => const MyInvoiceView(),
-      binding: MyInvoiceBinding(),
-    ),
+        name: _Paths.MY_INVOICE,
+        page: () => const MyInvoiceView(),
+        binding: MyInvoiceBinding(),
+        middlewares: [
+          // AuthenticatedGuard(),
+        ]),
     // GetPage(
     //   name: _Paths.WORKER,
     //   page: () => const WorkerView(),
@@ -90,29 +93,39 @@ class AppPages {
     //   ],
     // ),
     GetPage(
-      name: _Paths.ADD_WORKER,
-      page: () => const AddWorkerView(),
-      binding: AddWorkerBinding(),
-    ),
+        name: _Paths.ADD_WORKER,
+        page: () => const AddWorkerView(),
+        binding: AddWorkerBinding(),
+        middlewares: [
+          // AuthenticatedGuard(),
+        ]),
     GetPage(
-      name: _Paths.COMPLAINT,
-      page: () => const ComplaintView(),
-      binding: ComplaintBinding(),
-    ),
+        name: _Paths.COMPLAINT,
+        page: () => const ComplaintView(),
+        binding: ComplaintBinding(),
+        middlewares: [
+          // AuthenticatedGuard(),
+        ]),
     GetPage(
-      name: _Paths.INVENTORY,
-      page: () => const InventoryView(),
-      binding: InventoryBinding(),
-    ),
+        name: _Paths.INVENTORY,
+        page: () => const InventoryView(),
+        binding: InventoryBinding(),
+        middlewares: [
+          // AuthenticatedGuard(),
+        ]),
     GetPage(
-      name: _Paths.DETAIL_MEMBER,
-      page: () => const DetailMemberView(),
-      binding: DetailMemberBinding(),
-    ),
+        name: _Paths.DETAIL_MEMBER,
+        page: () => const DetailMemberView(),
+        binding: DetailMemberBinding(),
+        middlewares: [
+          // AuthenticatedGuard(),
+        ]),
     GetPage(
-      name: _Paths.INVOICE_HISTORY,
-      page: () => const InvoiceHistoryView(),
-      binding: InvoiceHistoryBinding(),
-    ),
+        name: _Paths.INVOICE_HISTORY,
+        page: () => const InvoiceHistoryView(),
+        binding: InvoiceHistoryBinding(),
+        middlewares: [
+          // AuthenticatedGuard(),
+        ]),
   ];
 }
